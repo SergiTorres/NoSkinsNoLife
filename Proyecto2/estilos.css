@@ -1,0 +1,17 @@
+body{
+	background-color: black;
+	color: white;
+	
+}
+h1{
+	font-family: "Helvetica";
+	margin-top: 15px;
+}
+hr{
+	color: red;
+	height: 5px;
+	background-color: yellow;
+}
+
+
+
