@@ -1,4 +1,4 @@
-<html>PUTA
+<html>PUTA tu madre
 <head>
 	<meta charset="ISO-8859-1">
 <title>Web Steam - Open ID</title>
