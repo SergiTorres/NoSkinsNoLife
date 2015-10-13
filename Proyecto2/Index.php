@@ -1,4 +1,4 @@
-<html>POLLA
+<html>PUTA
 <head>
 	<meta charset="ISO-8859-1">
 <title>Web Steam - Open ID</title>
