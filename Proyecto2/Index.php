@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-<h1 align="center">Steam - Open ID</h1><hr>
 <?php 
 	include 'apikey.php'; 
 	include 'OpenId.php';
@@ -21,7 +20,7 @@
 		}
 		
 		if(!isset($_SESSION['T2SteamAuth'])){
-			$login = "<div id=\"login\">Bienvenido invitado. Por favor <a href=\"?login\"><img src=\"http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_small.png\"/></a> para *Website Action*.</div>";
+			$login = "<a id='login' href='?login'></a>";
 		}
 		
 	}elseif($OpenID->mode == "cancel"){
@@ -72,10 +71,18 @@
 		unset($_SESSION['T2SteamID64']);
 		header("Location: Index.php");
 	}
-
+	
+	
 	
 	if(isset($_SESSION['T2SteamAuth'])){
-		$login = "<div id=\"login\" style='position:absolute; top:10px; rigth:20px;'><a href=\"?logout\" style='color:red; text-decoration:none;'><b>SALIR</b></a></div>";	
+		
+		$IDprofile = json_decode(file_get_contents("cache/{$_SESSION['T2SteamID64']}.json"));
+		foreach ($IDprofile->response->players as $player){
+			$Alias = $player->personaname;
+			$MiniAvatar = $player->avatar;
+		}
+		$login = "<div id='logout'><img src='$MiniAvatar'/><a href=''>$Alias</a> | <a href='?logout'>Cerrar sesion</a></div>";	
+		
 		/*
 		$IDarma = json_decode(file_get_contents("cache/{$_SESSION['T2SteamID64']}.json"));
 		echo $IDarma->response->players[0]->personaname. "<br>";
@@ -83,47 +90,51 @@
 		$IMGarma = json_decode(file_get_contents("cache2/{$_SESSION['T2SteamID64']}.json"));
 		echo $IMGarma->response->players[0]->personaname. "<br>";
 		
-		
 		echo "<img src=\"{$steam->response->players[0]->profileurl}\"inventory/json/753/1/>";
 		*/
-		echo  "<center>JSON PROFILE</center>";
-		$IDprofile = json_decode(file_get_contents("cache/{$_SESSION['T2SteamID64']}.json"));
-		foreach ($IDprofile->response->players as $player){
-			echo "
-				<br/><span style='color:gray;'>Player ID: </span>$player->steamid
-				<br/><span style='color:gray;'>Player Name: </span>$player->personaname
-				<br/><span style='color:gray;'>Profile URL: </span>$player->profileurl
-				<br/><u style='color:gray;'>SmallAvatar</u><br/> <img src='$player->avatar'/> 
-				<br/><u style='color:gray;'>MediumAvatar</u><br/> <img src='$player->avatarmedium'/> 
-				<br/><u style='color:gray;'>LargeAvatar</u><br/> <img src='$player->avatarfull'/> 
-			";
-			var_dump($player);
-		}
-		echo "<hr>";
-		echo "<center>JSON INVENTORY</center>";
-		$IDweapon = json_decode(file_get_contents("cache/inventory{$_SESSION['T2SteamID64']}.json"));
-		foreach($IDweapon->rgInventory as $e){
-			//var_dump($e);
-			echo "
-				</br><span style='color:gray;'>id: </span>$e->id 
-				</br><span style='color:gray;'>classid: </span>$e->classid
-				</br><span style='color:gray;'>instanceid: </span>$e->instanceid
-			"; 
-		}
+		
+		function cuerpo(){
+			
+			echo  "<main><center>JSON PROFILE</center>";
+			$IDprofile = json_decode(file_get_contents("cache/{$_SESSION['T2SteamID64']}.json"));
+			foreach ($IDprofile->response->players as $player){
+				echo "
+					<br/><span style='color:gray;'>Player ID: </span>$player->steamid
+					<br/><span style='color:gray;'>Player Name: </span>$player->personaname
+					<br/><span style='color:gray;'>Profile URL: </span>$player->profileurl
+					<br/><u style='color:gray;'>SmallAvatar</u><br/> <img src='$player->avatar'/> 
+					<br/><u style='color:gray;'>MediumAvatar</u><br/> <img src='$player->avatarmedium'/> 
+					<br/><u style='color:gray;'>LargeAvatar</u><br/> <img src='$player->avatarfull'/> 
+				";
+				var_dump($player);
+			}
+			
+			echo "<hr>";
+			echo "<center>JSON INVENTORY</center>";
+			$IDweapon = json_decode(file_get_contents("cache/inventory{$_SESSION['T2SteamID64']}.json"));
+			foreach($IDweapon->rgInventory as $e){
+				//var_dump($e);
+				echo "
+					</br><span style='color:gray;'>id: </span>$e->id 
+					</br><span style='color:gray;'>classid: </span>$e->classid
+					</br><span style='color:gray;'>instanceid: </span>$e->instanceid
+				"; 
+			}
 
-		echo "</br><u style='color:gray;'>icon_url</u><br>";
-		foreach($IDweapon->rgDescriptions as $e){
-			echo "</br><img src=http://steamcommunity-a.akamaihd.net/economy/image/$e->icon_url><br>"; 
-			var_dump($e);
+			echo "</br><u style='color:gray;'>icon_url</u><br>";
+			foreach($IDweapon->rgDescriptions as $e){
+				echo "</br><img src=http://steamcommunity-a.akamaihd.net/economy/image/$e->icon_url><br>"; 
+				var_dump($e);
+			}
+			echo "</main>";
 		}
-
 		
 	}
 	
+echo "<header>" . $login . "</header>";
+echo cuerpo();
 
-	echo $login;
-	
-	
 ?>
+
 </body>
 </html>

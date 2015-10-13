@@ -1,17 +1,32 @@
 body{
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: black;
 	
 }
-h1{
-	font-family: "Helvetica";
-	margin-top: 15px;
-}
-hr{
-	color: red;
-	height: 5px;
-	background-color: yellow;
+
+#login {
+    background-image: url("img/sits_large_noborder.png");
+	display: block;
+    float: right;
+    height: 43px;
+    margin: 10px;
+    width: 114px;
 }
 
+#logout {
+	display: block;
+    float: right;
+    height: 43px;
+    margin: 10px;
+    width: 190px;
+}
+
+#logout a{
+	color:gray;
+	
+}
+main{
+	padding-top:60px;
+}
 
 
