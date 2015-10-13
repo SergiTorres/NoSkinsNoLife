@@ -110,10 +110,17 @@
 				</br><span style='color:gray;'>instanceid: </span>$e->instanceid
 			"; 
 		}
+<<<<<<< HEAD
 
 		echo "</br><u style='color:gray;'>icon_url</u><br>";
 		foreach($IDweapon->rgDescriptions as $e){
 			echo "</br><img src=http://steamcommunity-a.akamaihd.net/economy/image/$e->icon_url><br>"; 
+=======
+		
+		echo "</br><u style='color:gray;'>icon_url_large</u><br>";
+		foreach($IDweapon->rgDescriptions as $e){
+			echo "</br><img src=http://steamcommunity-a.akamaihd.net/economy/image/$e->icon_url_large><br>"; 
+>>>>>>> 433f074c478ca27ecfd830cc828a28e3395f4708
 			var_dump($e);
 		}
 
