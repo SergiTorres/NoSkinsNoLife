@@ -115,16 +115,13 @@
 		echo "</br><u style='color:gray;'>icon_url</u><br>";
 		foreach($IDweapon->rgDescriptions as $e){
 			echo "</br><img src=http://steamcommunity-a.akamaihd.net/economy/image/$e->icon_url><br>"; 
-<<<<<<< HEAD
+
+
+		
+
 
 		}
 
-=======
-<<<<<<< HEAD
-		}
-=======
->>>>>>> 406fe49989b0108dd7bf94525f6da5f177aaa867
->>>>>>> 3b544f1c1e747ae7f330762b5328a7b12e1813a3
 
 		
 		echo "</br><u style='color:gray;'>icon_url_large</u><br>";
