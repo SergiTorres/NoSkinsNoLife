@@ -115,7 +115,9 @@
 		echo "</br><u style='color:gray;'>icon_url</u><br>";
 		foreach($IDweapon->rgDescriptions as $e){
 			echo "</br><img src=http://steamcommunity-a.akamaihd.net/economy/image/$e->icon_url><br>"; 
+
 		}
+
 
 		
 		echo "</br><u style='color:gray;'>icon_url_large</u><br>";
