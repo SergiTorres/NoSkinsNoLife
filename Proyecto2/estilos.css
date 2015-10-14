@@ -4,6 +4,24 @@ body{
 	
 }
 
+main{
+	
+}
+.alineado{
+  vertical-align: middle;
+
+}
+
+header{
+	height: 80px;
+    border-bottom: thick dotted #ff0000;
+	background-image: url("img/cabecera.jpg");
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	background-color: gray;
+
+}
+
 #login {
     background-image: url("img/sits_large_noborder.png");
 	display: block;
@@ -11,22 +29,21 @@ body{
     height: 43px;
     margin: 10px;
     width: 114px;
+
 }
 
 #logout {
+	position:relative;
 	display: block;
-    float: right;
+	float: right;
     height: 43px;
     margin: 10px;
-    width: 190px;
+    width: 210px;
 }
 
 #logout a{
-	color:gray;
-	
+	color:blue;
 }
-main{
-	padding-top:60px;
-}
+
 
 

@@ -21,6 +21,9 @@
 		
 		if(!isset($_SESSION['T2SteamAuth'])){
 			$login = "<a id='login' href='?login'></a>";
+			function cuerpo(){
+				
+			}
 		}
 		
 	}elseif($OpenID->mode == "cancel"){
@@ -79,9 +82,9 @@
 		$IDprofile = json_decode(file_get_contents("cache/{$_SESSION['T2SteamID64']}.json"));
 		foreach ($IDprofile->response->players as $player){
 			$Alias = $player->personaname;
-			$MiniAvatar = $player->avatar;
+			$MiniAvatar = $player->avatarmedium;
 		}
-		$login = "<div id='logout'><img src='$MiniAvatar'/><a href=''>$Alias</a> | <a href='?logout'>Cerrar sesion</a></div>";	
+		$login = "<div id='logout'><img class='alineado' src='$MiniAvatar'/><a href=''>$Alias</a> | <a href='?logout'>Cerrar sesion</a></div>";	
 		
 		/*
 		$IDarma = json_decode(file_get_contents("cache/{$_SESSION['T2SteamID64']}.json"));
@@ -95,7 +98,7 @@
 		
 		function cuerpo(){
 			
-			echo  "<main><center>JSON PROFILE</center>";
+			echo  "<center>JSON PROFILE</center>";
 			$IDprofile = json_decode(file_get_contents("cache/{$_SESSION['T2SteamID64']}.json"));
 			foreach ($IDprofile->response->players as $player){
 				echo "
@@ -126,13 +129,13 @@
 				echo "</br><img src=http://steamcommunity-a.akamaihd.net/economy/image/$e->icon_url><br>"; 
 				var_dump($e);
 			}
-			echo "</main>";
+			
 		}
 		
 	}
 	
 echo "<header>" . $login . "</header>";
-echo cuerpo();
+echo "<main>" . cuerpo() . "</main>";
 
 ?>
 
