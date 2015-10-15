@@ -14,12 +14,13 @@ main{
 
 header{
 	height: 80px;
+	margin:-8px -8px 0  -8px;
     border-bottom: thick dotted #ff0000;
 	background-image: url("img/cabecera.jpg");
 	background-size:100% 100%;
 	background-repeat:no-repeat;
 	background-color: gray;
-
+	
 
 }
 

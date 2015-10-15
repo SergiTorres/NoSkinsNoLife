@@ -95,7 +95,7 @@
 		
 		echo "<img src=\"{$steam->response->players[0]->profileurl}\"inventory/json/753/1/>";
 		*/
-		
+		/*
 		function cuerpo(){
 			
 			echo  "<center>JSON PROFILE</center>";
@@ -131,13 +131,16 @@
 			}
 			
 		}
-		
+		*/
 	}
 	
 echo "<header>" . $login . "</header>";
-echo "<main>" . cuerpo() . "</main>";
+//echo "<main>" . cuerpo() . "</main>";
 
 ?>
+<main>
+kjhkjhkjhk
+</main>
 
 </body>
 </html>
