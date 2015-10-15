@@ -20,6 +20,7 @@ header{
 	background-repeat:no-repeat;
 	background-color: gray;
 
+
 }
 
 #login {
@@ -33,7 +34,6 @@ header{
 }
 
 #logout {
-	position:relative;
 	display: block;
 	float: right;
     height: 43px;
