@@ -1,11 +1,13 @@
 body{
 	background-color: white;
 	color: black;
-	
+	margin: 0;
+	font-family: runescape;
 }
 
 main{
-	
+	background-color:blue;
+	height:100%;
 }
 .alineado{
   vertical-align: middle;
@@ -14,36 +16,58 @@ main{
 
 header{
 	height: 80px;
-	margin:-8px -8px 0  -8px;
     border-bottom: thick dotted #ff0000;
 	background-image: url("img/cabecera.jpg");
 	background-size:100% 100%;
 	background-repeat:no-repeat;
 	background-color: gray;
-	
-
 }
 
 #login {
     background-image: url("img/sits_large_noborder.png");
-	display: block;
-    float: right;
+	position: fixed;
     height: 43px;
+	width: 114px;
     margin: 10px;
-    width: 114px;
-
+	right:0;
 }
 
 #logout {
-	display: block;
-	float: right;
-    height: 43px;
-    margin: 10px;
-    width: 210px;
+	position: fixed;
+	height: 43px;
+	width: 210px;
+	margin: 10px;
+	right:0;
 }
 
 #logout a{
 	color:blue;
+}
+
+#colizq {
+	background-color:red;
+	float:left;
+	width: 240px;
+	height:100%;
+}
+#colder {
+	background-color:green;
+	float:right;
+	width: 240px;
+	height:100%;
+}
+#menu {
+	background-color:orange;
+	float:top;
+}
+
+#piepag {
+	background-color:yellow;
+	width:100%;
+	position: fixed; /* relative */
+	bottom: 0px; /* Solo Fixed*/
+	left: 0px; /* Solo Fixed*/
+
 }
 
 
