@@ -1,3 +1,0 @@
-<?php
-	$api = "3C6306054FAF3728CEA749E4ABDB7DB8";
-?>
