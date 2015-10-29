@@ -1,31 +1,39 @@
-<html>
+<!DOCTYPE html>
 <head>
-	<meta charset="ISO-8859-1">
+	<meta charset="utf-8">
 	<title>Web Steam - Open ID</title>
 	<link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 <?php include 'extras/steamidlogin.php'; ?>
+
+<main>
 <aside id="menu">
-	Inicio   -   contactos   -   etc
+<nav class="top_menu">
+	<ul>
+		<li><a herf="">Inicio</a></li>
+		<li><a herf="">Contactos</a></li>
+		<li><a herf="">etc</a></li>
+	</ul>
+</nav>
 </aside>
-
-
-<aside id="colizq">
+<aside>
 	YeaaH
 </aside>
-<aside id="colder">
+<aside>
 	Pedofilo
 </aside>
-<main>
-	<section class="box">
-		hola
-	</section>
+<aside>
+	hola
+	<br><br><br><br><br>
+	<br><br><br><br><br>
+	<br><br><br><br><br>
+</aside>
 </main>
-
 
 <footer id="piepag">
 	adios
 </footer>
+
 </body>
 </html>

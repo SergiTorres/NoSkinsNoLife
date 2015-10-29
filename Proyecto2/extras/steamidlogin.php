@@ -77,7 +77,7 @@
 			$Alias = $player->personaname;
 			$MiniAvatar = $player->avatarmedium;
 		}
-		$login = "<div id='logout'><img class='alineado' src='$MiniAvatar'/><a href=''>$Alias</a> | <a href='?logout'>Cerrar sesion</a></div>";	
+		$login = "<div id='logout'><img class='alineado' height='50' src='$MiniAvatar'/><a href=''>$Alias</a> | <a href='?logout'>Cerrar sesion</a></div>";	
 		
 		/*
 		$IDarma = json_decode(file_get_contents("cache/{$_SESSION['T2SteamID64']}.json"));
@@ -127,7 +127,7 @@
 		*/
 	}
 	
-echo "<header>" . $login . "</header>";
+echo "<header><a id='logo' href='#'></a>" . $login . "</header>";
 //echo "<main>" . cuerpo() . "</main>";
 
 ?>
